@@ -30,9 +30,23 @@ func ReadData() int {
 		// now we need to add the diagonal
 
 		//right diagonal
-
+		if v+3 <= length {
+			if (data[i] == 'S' && data[i+140+1] == 'A') && (data[i+(2*140)+2] == 'M' && data[i+(3*140)+3] == 'X') {
+				count += 1
+			}
+			if (data[i] == 'X' && data[i+140+1] == 'M') && (data[i+(2*140)+2] == 'A' && data[i+(3*140)+3] == 'S') {
+				count += 1
+			}
+		}
 		//left diagonal
-
+		if v <= length {
+			if (data[i] == 'S' && data[i+140-1] == 'A') && (data[i+(2*140)-2] == 'M' && data[i+(3*140)-3] == 'X') {
+				count += 1
+			}
+			if (data[i] == 'X' && data[i+140-1] == 'M') && (data[i+(2*140)-2] == 'A' && data[i+(3*140)-3] == 'S') {
+				count += 1
+			}
+		}
 	}
 
 	return count
